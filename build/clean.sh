@@ -13,7 +13,7 @@ if [ \! -f build/version ]; then
 fi
 
 # If we're on BSD, blow away the build dir under /usr/obj
-rm -rf /usr/obj`pwd`
+rm -rf /usr/obj$(pwd)
 
 #
 # Try to clean up a bit more...

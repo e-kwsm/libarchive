@@ -29,9 +29,9 @@ fi
 
 # Update the build number in the 'version' file.
 # Separate number from additional alpha/beta/etc marker
-MARKER=`cat version | sed 's/[0-9.]//g'`
+MARKER=$(cat version | sed 's/[0-9.]//g')
 # Bump the number
-VN=`cat version | sed 's/[^0-9.]//g'`
+VN=$(cat version | sed 's/[^0-9.]//g')
 # Build out the string.
 VS="$(($VN/1000000)).$(( ($VN/1000)%1000 )).$(( $VN%1000 ))$MARKER"
 
@@ -59,7 +59,7 @@ aclocal -I build/autoconf
 
 # Note: --automake flag needed only for libtoolize from
 # libtool 1.5.x; in libtool 2.2.x it is a synonym for --quiet
-case `uname` in
+case $(uname) in
 Darwin) glibtoolize --automake -c;;
 *) libtoolize --automake -c;;
 esac
