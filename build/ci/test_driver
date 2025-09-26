@@ -74,10 +74,10 @@ while test $# -gt 0; do
 done
 
 missing_opts=
-test x"$test_name" = x && missing_opts="$missing_opts --test-name"
-test x"$log_file"  = x && missing_opts="$missing_opts --log-file"
-test x"$trs_file"  = x && missing_opts="$missing_opts --trs-file"
-if test x"$missing_opts" != x; then
+test -z "$test_name" && missing_opts="$missing_opts --test-name"
+test -z "$log_file"  && missing_opts="$missing_opts --log-file"
+test -z "$trs_file"  && missing_opts="$missing_opts --trs-file"
+if test -n "$missing_opts"; then
   usage_error "the following mandatory options are missing:$missing_opts"
 fi
 
