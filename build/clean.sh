@@ -19,22 +19,22 @@ rm -rf /usr/obj$(pwd)
 # Try to clean up a bit more...
 #
 
-find . -name '*.So' | xargs rm -f
-find . -name '*.a' | xargs rm -f
-find . -name '*.la' | xargs rm -f
-find . -name '*.lo' | xargs rm -f
-find . -name '*.o' | xargs rm -f
-find . -name '*.orig' | xargs rm -f
-find . -name '*.po' | xargs rm -f
-find . -name '*.rej' | xargs rm -f
-find . -name '*~' | xargs rm -f
-find . -name '.depend' | xargs rm -f
-find . -name '.deps' | xargs rm -rf
-find . -name '.dirstamp' | xargs rm -f
-find . -name '.libs' | xargs rm -rf
-find . -name 'CMakeFiles' | xargs rm -rf
-find . -name 'cmake_install.cmake' | xargs rm -f
-find . -name 'CTestTestfile.cmake' | xargs rm -f
+find . -name '*.So' -exec rm -f {} +
+find . -name '*.a' -exec rm -f {} +
+find . -name '*.la' -exec rm -f {} +
+find . -name '*.lo' -exec rm -f {} +
+find . -name '*.o' -exec rm -f {} +
+find . -name '*.orig' -exec rm -f {} +
+find . -name '*.po' -exec rm -f {} +
+find . -name '*.rej' -exec rm -f {} +
+find . -name '*~' -exec rm -f {} +
+find . -name '.depend' -exec rm -f {} +
+find . -name '.deps' -exec rm -rf {} +
+find . -name '.dirstamp' -exec rm -f {} +
+find . -name '.libs' -exec rm -rf {} +
+find . -name 'CMakeFiles' -exec rm -rf {} +
+find . -name 'cmake_install.cmake' -exec rm -f {} +
+find . -name 'CTestTestfile.cmake' -exec rm -f {} +
 
 rm -rf Testing
 rm -rf autom4te.cache
