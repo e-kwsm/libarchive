@@ -52,6 +52,7 @@ IF(ENABLE_TEST)
     test_archive_write_set_options.c
     test_archive_write_set_passphrase.c
     test_bad_fd.c
+    test_compat_brotli.c
     test_compat_bzip2.c
     test_compat_cpio.c
     test_compat_gtar.c
@@ -117,6 +118,7 @@ IF(ENABLE_TEST)
     test_read_format_cpio_bin.c
     test_read_format_cpio_bin_Z.c
     test_read_format_cpio_bin_be.c
+    test_read_format_cpio_bin_br.c
     test_read_format_cpio_bin_bz2.c
     test_read_format_cpio_bin_gz.c
     test_read_format_cpio_bin_le.c
@@ -125,6 +127,7 @@ IF(ENABLE_TEST)
     test_read_format_cpio_bin_xz.c
     test_read_format_cpio_filename.c
     test_read_format_cpio_odc.c
+    test_read_format_cpio_svr4_brotli_rpm.c
     test_read_format_cpio_svr4_bzip2_rpm.c
     test_read_format_cpio_svr4_gzip.c
     test_read_format_cpio_svr4_gzip_rpm.c
@@ -141,14 +144,18 @@ IF(ENABLE_TEST)
     test_read_format_iso_Z.c
     test_read_format_iso_multi_extent.c
     test_read_format_iso_xorriso.c
+    test_read_format_isojoliet_br.c
     test_read_format_isojoliet_bz2.c
     test_read_format_isojoliet_long.c
     test_read_format_isojoliet_rr.c
     test_read_format_isojoliet_versioned.c
+    test_read_format_isorr_br.c
     test_read_format_isorr_bz2.c
     test_read_format_isorr_ce.c
+    test_read_format_isorr_new_br.c
     test_read_format_isorr_new_bz2.c
     test_read_format_isorr_rr_moved.c
+    test_read_format_isozisofs_br.c
     test_read_format_isozisofs_bz2.c
     test_read_format_lha.c
     test_read_format_lha_bugfix_0.c
@@ -156,6 +163,7 @@ IF(ENABLE_TEST)
     test_read_format_lha_filename_utf16.c
     test_read_format_mtree.c
     test_read_format_mtree_crash747.c
+    test_read_format_pax_br.c
     test_read_format_pax_bz2.c
     test_read_format_rar.c
     test_read_format_rar_encryption.c
@@ -245,6 +253,7 @@ IF(ENABLE_TEST)
     test_write_disk_symlink.c
     test_write_disk_times.c
     test_write_filter_b64encode.c
+    test_write_filter_brotli.c
     test_write_filter_bzip2.c
     test_write_filter_compress.c
     test_write_filter_gzip.c
@@ -297,6 +306,7 @@ IF(ENABLE_TEST)
     test_write_format_zip.c
     test_write_format_zip64_stream.c
     test_write_format_zip_compression_store.c
+    test_write_format_zip_compression_brotli.c
     test_write_format_zip_compression_bzip2.c
     test_write_format_zip_compression_lzmaxz.c
     test_write_format_zip_compression_zstd.c
