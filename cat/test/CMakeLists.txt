@@ -19,6 +19,7 @@ IF(ENABLE_CAT AND ENABLE_TEST)
     test_error.c
     test_error_mixed.c
     test_expand_Z.c
+    test_expand_br.c
     test_expand_bz2.c
     test_expand_gz.c
     test_expand_lz4.c
