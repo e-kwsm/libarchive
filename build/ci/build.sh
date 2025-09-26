@@ -24,8 +24,8 @@ MAKE="${MAKE:-make}"
 CMAKE="${CMAKE:-cmake}"
 CMAKE_ARGS="${CMAKE_ARGS:-}"
 CONFIGURE_ARGS="${CONFIGURE_ARGS:-}"
-CURDIR=`pwd`
-SRCDIR="${SRCDIR:-`pwd`}"
+CURDIR=$(pwd)
+SRCDIR="${SRCDIR:-$(pwd)}"
 RET=0
 
 usage () {

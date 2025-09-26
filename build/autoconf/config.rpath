@@ -37,9 +37,9 @@ libext=a
 shrext=.so
 
 host="$1"
-host_cpu=`echo "$host" | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\1/'`
-host_vendor=`echo "$host" | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\2/'`
-host_os=`echo "$host" | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\3/'`
+host_cpu=$(echo "$host" | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\1/')
+host_vendor=$(echo "$host" | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\2/')
+host_os=$(echo "$host" | sed 's/^\([^-]*\)-\([^-]*\)-\(.*\)$/\3/')
 
 # Code taken from libtool.m4's _LT_CC_BASENAME.
 
@@ -51,7 +51,7 @@ for cc_temp in $CC""; do
     *) break;;
   esac
 done
-cc_basename=`echo "$cc_temp" | sed -e 's%^.*/%%'`
+cc_basename=$(echo "$cc_temp" | sed -e 's%^.*/%%')
 
 # Code taken from libtool.m4's _LT_COMPILER_PIC.
 
@@ -98,7 +98,7 @@ else
           wl='-lopt='
           ;;
         *)
-          case `$CC -V 2>&1 | sed 5q` in
+          case $($CC -V 2>&1 | sed 5q) in
             *Sun\ F* | *Sun*Fortran*)
               wl=
               ;;

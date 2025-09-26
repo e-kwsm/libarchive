@@ -7,7 +7,7 @@ then
 	exit 1
 fi
 
-UNAME=`uname`
+UNAME=$(uname)
 if [ "$1" = "prepare" ]
 then
 	if [ "${UNAME}" = "FreeBSD" ]
@@ -18,7 +18,7 @@ then
 		pkg update
 		mount -u -o acls /
 		mkdir /tmp_acl_nfsv4
-		MD=`mdconfig -a -t swap -s 128M`
+		MD=$(mdconfig -a -t swap -s 128M)
 		newfs /dev/$MD
 		tunefs -N enable /dev/$MD
 		mount /dev/$MD /tmp_acl_nfsv4
@@ -49,7 +49,7 @@ then
 	then
 		set -e
 		echo "Additional NFSv4 ACL tests"
-		CURDIR=`pwd`
+		CURDIR=$(pwd)
 		if [ "${BS}" = "cmake" ]
 		then
 			BIN_SUBDIR="bin"
