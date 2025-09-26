@@ -98,10 +98,10 @@ else
 fi
 
 do_exit='rm -f $log_file $trs_file; (exit $st); exit $st'
-trap "st=129; $do_exit" 1
-trap "st=130; $do_exit" 2
-trap "st=141; $do_exit" 13
-trap "st=143; $do_exit" 15
+trap "st=129; $do_exit" HUP
+trap "st=130; $do_exit" INT
+trap "st=141; $do_exit" PIPE
+trap "st=143; $do_exit" TERM
 
 # Test script is run here.
 ( "$@"; echo "$?" > $log_file.s ) | tee $log_file 2>&1
