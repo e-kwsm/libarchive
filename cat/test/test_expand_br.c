@@ -6,7 +6,7 @@
  */
 #include "test.h"
 
-DEFINE_TEST(test_expand_bz2)
+DEFINE_TEST(test_expand_br)
 {
 	const char *reffile = "test_expand.br";
 	int f;
