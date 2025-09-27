@@ -228,6 +228,7 @@ OPTION(ENABLE_LZMA "Enable the use of the system LZMA library if found" ON)
 OPTION(ENABLE_ZSTD "Enable the use of the system zstd library if found" ON)
 
 OPTION(ENABLE_ZLIB "Enable the use of the system ZLIB library if found" ON)
+OPTION(ENABLE_Brotli "Enable the use of the system Brotli library if found" ON)
 OPTION(ENABLE_BZip2 "Enable the use of the system BZip2 library if found" ON)
 OPTION(ENABLE_LIBXML2 "Enable the use of the system libxml2 library if found" ON)
 OPTION(ENABLE_EXPAT "Enable the use of the system EXPAT library if found" ON)
@@ -513,6 +514,33 @@ ENDIF(BZIP2_FOUND)
 MARK_AS_ADVANCED(CLEAR BZIP2_INCLUDE_DIR)
 MARK_AS_ADVANCED(CLEAR BZIP2_LIBRARIES)
 
+#
+# Find Brotli
+#
+IF(ENABLE_Brotli)
+  FIND_PACKAGE(Brotli)
+ELSE()
+  SET(BROTLI_FOUND FALSE) # Override cached value
+ENDIF()
+IF(BROTLI_FOUND)
+  SET(HAVE_LIBBROTLI 1)
+  SET(HAVE_BROTLI_H 1)
+  INCLUDE_DIRECTORIES(${BROTLI_INCLUDE_DIR})
+  LIST(APPEND ADDITIONAL_LIBS ${BROTLI_LIBRARIES})
+  # Test if a macro is needed for the library.
+  TRY_MACRO_FOR_LIBRARY(
+    "${BROTLI_INCLUDE_DIR}" "${BROTLI_LIBRARIES}"
+    COMPILES
+    "#include <brotli/port.h>\nint main(void) { return 1; }"
+    "USE_BROTLI_DLL;USE_BROTLI_STATIC")
+  IF(USE_BROTLI_DLL)
+    ADD_DEFINITIONS(-DUSE_BROTLI_DLL)
+  ELSEIF(USE_BROTLI_STATIC)
+    ADD_DEFINITIONS(-DUSE_BROTLI_STATIC)
+  ENDIF(USE_BROTLI_DLL)
+ENDIF(BROTLI_FOUND)
+MARK_AS_ADVANCED(CLEAR BROTLI_INCLUDE_DIR)
+MARK_AS_ADVANCED(CLEAR BROTLI_LIBRARIES)
 
 #
 # Find LZMA
