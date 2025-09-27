@@ -39,7 +39,7 @@
 #include <unistd.h>
 #endif
 #ifdef HAVE_BROTLI_H
-#include <bzlib.h>
+#include <brotli/decode.h>
 #endif
 
 #include "archive.h"
