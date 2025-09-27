@@ -66,6 +66,10 @@ archive_read_append_filter(struct archive *_a, int code)
     case ARCHIVE_FILTER_GZIP:
       r1 = archive_read_support_filter_gzip(_a);
       break;
+    case ARCHIVE_FILTER_BROTLI:
+      strcpy(str, "brotli");
+      r1 = archive_read_support_filter_brotli(_a);
+      break;
     case ARCHIVE_FILTER_BZIP2:
       r1 = archive_read_support_filter_bzip2(_a);
       break;
