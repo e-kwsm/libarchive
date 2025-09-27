@@ -220,6 +220,8 @@ These symbols, along with their replacements if any, are listed below:
 .It Fn archive_read_support_compression_all
 .\" archive_read_support_compression_* -> archive_read_support_filter_*
 .Fn archive_read_support_filter_all
+.It Fn archive_read_support_compression_brotli
+.Fn archive_read_support_filter_brotli
 .It Fn archive_read_support_compression_bzip2
 .Fn archive_read_support_filter_bzip2
 .It Fn archive_read_support_compression_compress
@@ -243,6 +245,8 @@ These symbols, along with their replacements if any, are listed below:
 .It Fn archive_read_support_compression_xz
 .Fn archive_read_support_filter_xz
 .\" archive_write_set_compression_* -> archive_write_add_filter_*
+.It Fn archive_write_set_compression_brotli
+.Fn archive_write_add_filter_brotli
 .It Fn archive_write_set_compression_bzip2
 .Fn archive_write_add_filter_bzip2
 .It Fn archive_write_set_compression_compress
