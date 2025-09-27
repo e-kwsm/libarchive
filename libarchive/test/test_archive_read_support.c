@@ -134,6 +134,7 @@ DEFINE_TEST(test_archive_read_support)
 	}
 
 	test_filter_or_format(archive_read_support_filter_all);
+	test_filter_or_format(archive_read_support_filter_brotli);
 	test_filter_or_format(archive_read_support_filter_bzip2);
 	test_filter_or_format(archive_read_support_filter_compress);
 	test_filter_or_format(archive_read_support_filter_gzip);
