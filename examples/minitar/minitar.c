@@ -342,6 +342,9 @@ extract(const char *filename, int do_extract, int flags)
 #ifndef NO_BZIP2_EXTRACT
 	archive_read_support_filter_bzip2(a);
 #endif
+#ifndef NO_BROTLI_EXTRACT
+	archive_read_support_filter_brotli(a);
+#endif
 #ifndef NO_GZIP_EXTRACT
 	archive_read_support_filter_gzip(a);
 #endif
